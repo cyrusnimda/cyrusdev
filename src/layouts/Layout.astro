@@ -1,3 +1,8 @@
+---
+import "../assets/global.css";
+import Menu from '../components/Menu.astro';
+import { ClientRouter } from "astro:transitions";
+---
 <!doctype html>
 <html lang="en">
 	<head>
@@ -5,10 +10,16 @@
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Welcome to Cyrusdev LTD</title>
+		<title>Cyrusdev LTD - Web development in Python and PHP</title>
+		<ClientRouter />
 	</head>
-	<body class="bg-[#2c3238]">
-		<slot />
+	<body class="bg-[#2c3238] text-white" >
+		<div id="container" class="container mx-auto">
+			<main class="m-4 md:m-8">
+				<Menu />
+				<slot />
+			</main>
+		</div>
 	</body>
 </html>
 

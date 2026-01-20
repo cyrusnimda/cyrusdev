@@ -1,9 +1,117 @@
 ---
-import Welcome from '../components/Welcome.astro';
+
 import Layout from '../layouts/Layout.astro';
-import "../assets/global.css";
+import under from '../assets/under.webp';
 ---
 
+
 <Layout>
-	<Welcome />
+	<section class="flex flex-col items-center justify-center gap-8 md:gap-12 min-h-[80vh] text-center overflow-hidden">
+		<div class="space-y-4 animate-fade-in-up">
+			<h1 class="text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-emerald-400 pb-2">
+				Cyrusdev
+			</h1>
+			<p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto px-4">
+				Expert backend solutions for scalable web applications.
+				<br/>
+				We specialize in massive high-performance systems using 
+				<span class="text-blue-400 font-semibold">Python</span> (<span class="italic">FastAPI</span>) and 
+				<span class="text-emerald-400 font-semibold">PHP</span> (<span class="italic">Symfony</span>).
+			</p>
+		</div>
+		
+		<div class="flex gap-4 animate-fade-in-up delay-200">
+			<a href="/services" class="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-semibold transition-all hover:scale-105 shadow-lg shadow-blue-500/30">
+				Our Services
+			</a>
+			<a href="/projects" class="px-8 py-3 bg-gray-800 hover:bg-gray-700 text-white rounded-full font-semibold transition-all hover:scale-105 border border-gray-700">
+				View Work
+			</a>
+		</div>
+
+		<!-- Infinity Scroll Marquee -->
+		<div class="w-full mt-12 py-8 bg-gray-800/30 border-y border-gray-700/50 backdrop-blur-sm relative animate-fade-in-up delay-300">
+            <div class="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-[#2c3238] to-transparent z-10"></div>
+            <div class="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-[#2c3238] to-transparent z-10"></div>
+            
+			<div class="marquee-container overflow-hidden flex whitespace-nowrap">
+				<div class="marquee-content flex gap-12 items-center px-6">
+                    <!-- Tech Stack Icons/Text -->
+                    <span class="text-2xl font-bold text-gray-400 flex items-center gap-2"><span class="text-blue-400">⚡</span> FastAPI</span>
+                    <span class="text-2xl font-bold text-gray-400 flex items-center gap-2"><span class="text-white">Sf</span> Symfony</span>
+                    <span class="text-2xl font-bold text-gray-400 flex items-center gap-2"><span class="text-yellow-400">🐍</span> Python</span>
+                    <span class="text-2xl font-bold text-gray-400 flex items-center gap-2"><span class="text-indigo-400">🐘</span> PHP</span>
+                    <span class="text-2xl font-bold text-gray-400 flex items-center gap-2"><span class="text-cyan-400">⚛️</span> React</span>
+                    <span class="text-2xl font-bold text-gray-400 flex items-center gap-2"><span class="text-orange-400">🚀</span> Astro</span>
+                    <span class="text-2xl font-bold text-gray-400 flex items-center gap-2"><span class="text-teal-400">🏁</span> Tailwind</span>
+                    <span class="text-2xl font-bold text-gray-400 flex items-center gap-2"><span class="text-blue-500">🐳</span> Docker</span>
+                    <!-- Duplicate for loop -->
+                    <span class="text-2xl font-bold text-gray-400 flex items-center gap-2"><span class="text-blue-400">⚡</span> FastAPI</span>
+                    <span class="text-2xl font-bold text-gray-400 flex items-center gap-2"><span class="text-white">Sf</span> Symfony</span>
+                    <span class="text-2xl font-bold text-gray-400 flex items-center gap-2"><span class="text-yellow-400">🐍</span> Python</span>
+                    <span class="text-2xl font-bold text-gray-400 flex items-center gap-2"><span class="text-indigo-400">🐘</span> PHP</span>
+                    <span class="text-2xl font-bold text-gray-400 flex items-center gap-2"><span class="text-cyan-400">⚛️</span> React</span>
+                    <span class="text-2xl font-bold text-gray-400 flex items-center gap-2"><span class="text-orange-400">🚀</span> Astro</span>
+                    <span class="text-2xl font-bold text-gray-400 flex items-center gap-2"><span class="text-teal-400">🏁</span> Tailwind</span>
+                    <span class="text-2xl font-bold text-gray-400 flex items-center gap-2"><span class="text-blue-500">🐳</span> Docker</span>
+                    <!-- Duplicate for loop -->
+                    <span class="text-2xl font-bold text-gray-400 flex items-center gap-2"><span class="text-blue-400">⚡</span> FastAPI</span>
+                    <span class="text-2xl font-bold text-gray-400 flex items-center gap-2"><span class="text-white">Sf</span> Symfony</span>
+                    <span class="text-2xl font-bold text-gray-400 flex items-center gap-2"><span class="text-yellow-400">🐍</span> Python</span>
+                    <span class="text-2xl font-bold text-gray-400 flex items-center gap-2"><span class="text-indigo-400">🐘</span> PHP</span>
+				</div>
+			</div>
+		</div>
+
+        <!-- Related Photos/Work Snippets -->
+        <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto px-4 w-full animate-fade-in-up delay-300">
+             <div class="bg-gray-800 rounded-xl p-1 shadow-xl transform rotate-1 hover:rotate-0 transition-all duration-300 hover:z-10 hover:scale-105">
+                 <div class="bg-gray-900 rounded-lg p-6 h-64 flex flex-col items-center justify-center border border-gray-700">
+                     <div class="text-5xl mb-4">🐍</div>
+                     <h3 class="text-xl font-bold text-white mb-2">Python Systems</h3>
+                     <p class="text-sm text-gray-400">Robust backend architecture with FastAPI & Django.</p>
+                 </div>
+             </div>
+             <div class="bg-gray-800 rounded-xl p-1 shadow-xl transform -rotate-2 hover:rotate-0 transition-all duration-300 hover:z-10 hover:scale-105 translate-y-4 md:translate-y-0">
+                 <div class="bg-gray-900 rounded-lg p-6 h-64 flex flex-col items-center justify-center border border-gray-700">
+                     <div class="text-5xl mb-4">🐘</div>
+                     <h3 class="text-xl font-bold text-white mb-2">PHP Engineering</h3>
+                     <p class="text-sm text-gray-400">Modern Symfony applications & legacy migration.</p>
+                 </div>
+             </div>
+             <div class="bg-gray-800 rounded-xl p-1 shadow-xl transform rotate-2 hover:rotate-0 transition-all duration-300 hover:z-10 hover:scale-105">
+                 <div class="bg-gray-900 rounded-lg p-6 h-64 flex flex-col items-center justify-center border border-gray-700">
+                     <div class="text-5xl mb-4">⚡</div>
+                     <h3 class="text-xl font-bold text-white mb-2">High Performance</h3>
+                     <p class="text-sm text-gray-400">Optimized APIs and microservices architecture.</p>
+                 </div>
+             </div>
+        </div>
+	</section>
 </Layout>
+
+<style>
+	.animate-fade-in-up {
+		animation: fadeInUp 0.8s ease-out forwards;
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	.delay-200 { animation-delay: 0.2s; }
+	.delay-300 { animation-delay: 0.3s; }
+
+	@keyframes fadeInUp {
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+    .marquee-content {
+        animation: scroll 30s linear infinite;
+    }
+
+    @keyframes scroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+    }
+</style>

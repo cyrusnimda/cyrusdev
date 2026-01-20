@@ -1,0 +1,96 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const projects = [
+  {
+    title: "E-commerce Platform",
+    description: "A full-featured specialized e-commerce solution built with Django and React. Features include real-time inventory, secure payments (Stripe), and a custom admin dashboard.",
+    tags: ["Django", "React", "PostgreSQL", "Stripe"],
+    link: "#",
+    status: "Completed"
+  },
+  {
+    title: "Real Estate Management System",
+    description: "Property management SaaS allowing agents to track listings, schedule viewings, and manage client communications automatically.",
+    tags: ["Laravel", "Vue.js", "MySQL", "Tailwind"],
+    link: "#",
+    status: "In Progress"
+  },
+  {
+    title: "Data Analytics Dashboard",
+    description: "Interactive dashboard for visualizing complex datasets for a logistics company. Built with Python (Pandas/Plotly) and Streamlit.",
+    tags: ["Python", "Streamlit", "Pandas", "Plotly"],
+    link: "#",
+    status: "Completed"
+  }
+];
+---
+
+<Layout>
+  <section class="py-16">
+    <div class="text-center mb-16 animate-fade-in">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-emerald-400">Our Work</h1>
+      <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+        A selection of recent projects delivering real value to clients.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
+      {projects.map((project, index) => (
+        <div class="bg-gray-800/50 rounded-2xl overflow-hidden hover:bg-gray-800 transition-all duration-300 hover:-translate-y-2 border border-gray-700/50 hover:border-blue-500/30 group animate-fade-in-up flex flex-col" style={`animation-delay: ${index * 150}ms`}>
+          <div class="p-8 flex flex-col flex-grow">
+            <div class="flex justify-between items-start mb-4">
+                <span class={`text-xs font-semibold px-3 py-1 rounded-full ${project.status === 'Completed' ? 'bg-emerald-500/20 text-emerald-400' : 'bg-yellow-500/20 text-yellow-400'}`}>
+                    {project.status}
+                </span>
+            </div>
+            <h3 class="text-2xl font-bold mb-3 text-white group-hover:text-blue-400 transition-colors">{project.title}</h3>
+            <p class="text-gray-400 leading-relaxed mb-6 flex-grow">
+              {project.description}
+            </p>
+            
+            <div class="flex flex-wrap gap-2 mt-auto">
+                {project.tags.map(tag => (
+                    <span class="text-sm bg-gray-700 text-gray-300 px-3 py-1 rounded-lg">
+                        {tag}
+                    </span>
+                ))}
+            </div>
+          </div>
+          <div class="bg-gray-900/50 p-4 border-t border-gray-700/50 flex justify-end">
+            <a href={project.link} class="text-blue-400 hover:text-blue-300 font-semibold flex items-center gap-2 group-hover:translate-x-1 transition-transform">
+                View Details 
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+    opacity: 0;
+  }
+  
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  @keyframes fadeIn {
+    to { opacity: 1; }
+  }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

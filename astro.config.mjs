@@ -9,5 +9,19 @@ export default defineConfig({
     },
     devToolbar: {
         enabled: false
+    },
+    env: {
+        schema: {
+            CLOUDFLARE_APIKEY: {
+                type: 'string',
+                context: 'server',
+                access: 'public'
+            },
+            CLOUDFLARE_SECRETKEY: {
+                type: 'string',
+                context: 'server',
+                access: 'secret'
+            },
+        }
     }
 });
