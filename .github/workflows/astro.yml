@@ -23,6 +23,10 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: npm run build --if-present
+      env:
+        CLOUDFLARE_APIKEY: ${{ secrets.CLOUDFLARE_APIKEY }}
+        CLOUDFLARE_SECRETKEY: ${{ secrets.CLOUDFLARE_SECRETKEY }}
+        SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
     - name: Deploy to Staging server
       uses: easingthemes/ssh-deploy@main
       with:
