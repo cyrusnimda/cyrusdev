@@ -24,10 +24,5 @@ export default defineConfig({
                 access: 'secret'
             },
         }
-    },
-    output: 'server', // or 'hybrid'
-    adapter: node({
-        mode: "standalone", // "standalone" crea su propio servidor HTTP
-    }),
-
+    }
 });
