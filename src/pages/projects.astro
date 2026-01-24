@@ -1,25 +1,41 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
+
+
 const projects = [
   {
-    title: "E-commerce Platform",
-    description: "A full-featured specialized e-commerce solution built with Django and React. Features include real-time inventory, secure payments (Stripe), and a custom admin dashboard.",
-    tags: ["Django", "React", "PostgreSQL", "Stripe"],
-    link: "#",
-    status: "Completed"
-  },
-  {
-    title: "Real Estate Management System",
-    description: "Property management SaaS allowing agents to track listings, schedule viewings, and manage client communications automatically.",
-    tags: ["Laravel", "Vue.js", "MySQL", "Tailwind"],
+    title: "Pub Slot Management Platform",
+    description: "A web application for managing slot machines in pubs, tracking profits, statistics, and machine alerts. Recently started a migration project to move from PHP to REST API using Fast API (Python).",
+    tags: ["Python 3.13", "FastAPI", "Sqlalchemy", "MySQL 8", "AWS", "Pytest"],
     link: "#",
     status: "In Progress"
   },
   {
-    title: "Data Analytics Dashboard",
-    description: "Interactive dashboard for visualizing complex datasets for a logistics company. Built with Python (Pandas/Plotly) and Streamlit.",
-    tags: ["Python", "Streamlit", "Pandas", "Plotly"],
+    title: "Travel CRM Migration",
+    description: "Led a major migration project updating Database (MySQL 5.7 to 8), OS (Debian 9 to 12), and Framework (Symfony 5.1 to 6.4), while developing new features for the CRM.",
+    tags: ["Symfony 6.4", "React.js", "Typescript", "Node 20", "MySQL 8", "AWS"],
+    link: "#",
+    status: "Completed"
+  },
+  {
+    title: "Community Management System",
+    description: "Built and designed features for a community management firm including reporting systems and robust anti-spam modules. Initiated migration of legacy PHP app into a Django API server.",
+    tags: ["PHP 8.2", "Django REST", "Typescript", "GCP", "MySQL 5.7", "CloudFlare"],
+    link: "#",
+    status: "Completed"
+  },
+  {
+    title: "Travel CRM implementation",
+    description: "Migrated legacy VPS infrastructure to AWS and optimized CRM performance. Implemented CI/CD pipelines and established TDD/DDD standards for the development team.",
+    tags: ["PHP 7.1", "Symfony 5.1", "AWS", "Redis", "Elastic search", "CI/CD"],
+    link: "#",
+    status: "Completed"
+  },
+  {
+    title: "Healthcare & Gaming Solutions",
+    description: "Developed a methadone distribution module for public health and an immersive web-based card game hosted on AWS serving over 200,000 players.",
+    tags: ["Symfony 2", "Django 1.2", "MongoDB", "RabbitMQ", "MySQL 5.7", "AWS"],
     link: "#",
     status: "Completed"
   }
@@ -27,7 +43,7 @@ const projects = [
 ---
 
 <Layout>
-  <section class="py-16">
+  <section class="py-2">
     <div class="text-center mb-16 animate-fade-in">
       <h1 class="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-emerald-400">Our Work</h1>
       <p class="text-gray-400 text-lg max-w-2xl mx-auto">
