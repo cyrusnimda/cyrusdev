@@ -27,6 +27,11 @@ export default defineConfig({
                 context: 'server',
                 access: 'secret'
             },
+            MAILGUN_API_KEY: {
+                type: 'string',
+                context: 'server',
+                access: 'secret'
+            },
         }
     }
 });

@@ -1,46 +1,45 @@
-//export const prerender = false
 import type { APIRoute } from "astro";
+import { CLOUDFLARE_SECRETKEY } from "astro:env/server";
+import { sendContactEmail } from "../../lib/email";
 
 export const POST: APIRoute = async ({ request }) => {
     const data = await request.formData();
     const name = data.get("name");
     const email = data.get("email");
     const message = data.get("message");
-    const recaptcha = data.get("cf-turnstile-response");
+    const turnstileToken = data.get("cf-turnstile-response");
 
-    // Validate cloudflare recaptcha
-    // const recaptchaResponse = await fetch(
-    //     `https://www.google.com/recaptcha/api/siteverify?secret=${Deno.env.get("RECAPTCHA_SECRET")}&response=${recaptcha}`,
-    //     {
-    //         method: "POST",
-    //     }
-    // );
-    // const recaptchaData = await recaptchaResponse.json();
-    // if (!recaptchaData.success) {
-    //     return new Response(
-    //         JSON.stringify({
-    //             message: "Invalid recaptcha",
-    //         }),
-    //         { status: 400 }
-    //     );
-    // }
-
-
-    console.log(name, email, message, recaptcha);
-    // Validate the data - you'll probably want to do more than this
-    if (!name || !email || !message) {
-        return new Response(
-            JSON.stringify({
-                message: "Missing required fields",
+    // Validate Cloudflare Turnstile
+    const turnstileResponse = await fetch(
+        "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+        {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams({
+                secret: CLOUDFLARE_SECRETKEY,
+                response: turnstileToken as string,
             }),
+        }
+    );
+    const turnstileData = await turnstileResponse.json();
+    if (!turnstileData.success) {
+        return new Response(
+            JSON.stringify({ message: "Invalid turnstile" }),
             { status: 400 }
         );
     }
-    // Do something with the data, then return a success response
+
+    if (!name || !email || !message) {
+        return new Response(
+            JSON.stringify({ message: "Missing required fields" }),
+            { status: 400 }
+        );
+    }
+
+    await sendContactEmail(name as string, email as string, message as string);
+
     return new Response(
-        JSON.stringify({
-            message: "Success!"
-        }),
+        JSON.stringify({ message: "Success!" }),
         { status: 200 }
     );
 };
