@@ -96,6 +96,11 @@ import {CLOUDFLARE_APIKEY} from "astro:env/server";
     </style>
 
 	<script>
+		import 'notyf/notyf.min.css';
+		import { Notyf } from 'notyf';
+
+		const notyf = new Notyf({ position: { x: 'right', y: 'bottom' }, duration: 4000 });
+
 		// Load Cloudflare Turnstile script
 		const turnstileScript = document.createElement('script');
 		turnstileScript.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
@@ -104,13 +109,11 @@ import {CLOUDFLARE_APIKEY} from "astro:env/server";
 		// Contact form submission
 		const contactForm = document.getElementById('contactForm');
 
-		// check if form exists and it is the correct HTMLFormElement element
 		if (!contactForm || !(contactForm instanceof HTMLFormElement)) {
 			console.error('Contact form not found or not a form element');
 		} else {
 			contactForm.addEventListener('submit', async (event) => {
 				event.preventDefault();
-				console.log('Form submitted');
 
 				const formData = new FormData(contactForm);
 				const response = await fetch(contactForm.action, {
@@ -119,10 +122,10 @@ import {CLOUDFLARE_APIKEY} from "astro:env/server";
 				});
 
 				if (response.ok) {
-					alert('Message sent successfully');
+					notyf.success('Message sent successfully!');
 					contactForm.reset();
 				} else {
-					alert('Error sending message');
+					notyf.error('Error sending message. Please try again.');
 				}
 			});
 		}
