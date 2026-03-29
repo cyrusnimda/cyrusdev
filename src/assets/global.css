@@ -3,3 +3,36 @@
 body {
 
 }
+
+/* Notyf custom styles */
+.notyf__toast {
+    border-radius: 0.75rem !important;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4) !important;
+    font-size: 0.9rem;
+    min-width: 280px;
+}
+.notyf__toast--success {
+    background: linear-gradient(135deg, rgba(6,78,59,0.85), rgba(6,95,70,0.85)) !important;
+    border-color: rgba(52,211,153,0.3) !important;
+}
+.notyf__toast--error {
+    background: linear-gradient(135deg, rgba(69,10,10,0.85), rgba(127,29,29,0.85)) !important;
+    border-color: rgba(248,113,113,0.3) !important;
+}
+.notyf__icon--success svg,
+.notyf__icon--success i {
+    color: #34d399 !important;
+}
+.notyf__icon--error svg,
+.notyf__icon--error i {
+    color: #f87171 !important;
+}
+.notyf__ripple {
+    display: none !important;
+}
+.notyf__message {
+    font-weight: 500;
+    letter-spacing: 0.01em;
+}
