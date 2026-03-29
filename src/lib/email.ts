@@ -3,7 +3,7 @@ import FormData from 'form-data';
 import { MAILGUN_API_KEY } from 'astro:env/server';
 
 const mailgun = new Mailgun(FormData);
-const mg = mailgun.client({ username: 'api', key: MAILGUN_API_KEY, url: 'https://api.eu.mailgun.net' });
+const mg = mailgun.client({ username: 'api', key: MAILGUN_API_KEY });
 
 export async function sendContactEmail(name: string, email: string, message: string) {
     await mg.messages.create('mg.cyrusnimda.com', {

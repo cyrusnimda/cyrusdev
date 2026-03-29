@@ -28,8 +28,8 @@ async function sendSimpleMessage() {
   });
   try {
     const data = await mg.messages.create("mg.cyrusnimda.com", {
-      from: "Mailgun Sandbox <postmaster@mg.cyrusnimda.com>",
-      to: ["Josu Ruiz <cyrusnimda@gmail.com>"],
+      from: "Cyrusdev <postmaster@mg.cyrusnimda.com>",
+      to: ["Contact <contact@cyrusdev.co.uk>"],
       subject: "Hello Josu Ruiz",
       text: "Congratulations Josu Ruiz, you just sent an email with Mailgun! You are truly awesome!",
     });
