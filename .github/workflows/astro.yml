@@ -38,7 +38,6 @@ jobs:
         TARGET: "/var/www/html/cyrusdev.co.uk/dist/"
         EXCLUDE: "/node_modules/"
         SCRIPT_AFTER: |
-          source ~/.bashrc
           cd /var/www/html/cyrusdev.co.uk
-          pnpm ci --production
-          pm2 restart ecosystem.config.cjs
+          /home/josu/.nvm/versions/node/v20.12.1/bin/pnpm ci --production
+          /home/josu/.nvm/versions/node/v20.12.1/bin/pm2 restart ecosystem.config.cjs
