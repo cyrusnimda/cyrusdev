@@ -14,7 +14,7 @@ A professional portfolio website built with Astro, Tailwind CSS, and Node.js.
 - **Responsive Design**: Mobile-first approach using Tailwind CSS.
 - **Server-Side Rendering (SSR)**: Dynamic content delivery with `@astrojs/node`.
 - **Project Showcase**: Filtered and tagged project portfolio.
-- **Contact Form**: Integrated with Cloudflare Turnstile for spam protection.
+- **Contact Form**: Integrated with Cloudflare Turnstile for spam protection. 
 
 ## 🛠️ Getting Started
 
