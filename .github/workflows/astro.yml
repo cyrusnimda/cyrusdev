@@ -39,5 +39,5 @@ jobs:
         EXCLUDE: "/node_modules/"
         SCRIPT_AFTER: |
           cd /var/www/html/cyrusdev.co.uk
-          npm ci --production
-          pm2 reload cyrusdev || pm2 start ecosystem.config.cjs
+          pnpm ci --production
+          pm2 restart ecosystem.config.cjs
