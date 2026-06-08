@@ -35,7 +35,7 @@ jobs:
         SOURCE: "dist/"
         REMOTE_HOST: "ssh.cyrusnimda.com"
         REMOTE_USER: "josu"
-        TARGET: "/var/www/html/cyrusdev.co.uk/"
+        TARGET: "/var/www/html/cyrusdev.co.uk/dist/"
         EXCLUDE: "/node_modules/"
         SCRIPT_AFTER: |
           cd /var/www/html/cyrusdev.co.uk
