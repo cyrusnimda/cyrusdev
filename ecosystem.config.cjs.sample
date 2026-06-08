@@ -1,0 +1,14 @@
+module.exports = {
+    apps: [
+        {
+            name: "cyrusdev",
+            script: "./dist/server/entry.mjs",
+            env: {
+                NODE_ENV: "production",
+                CLOUDFLARE_APIKEY: "xxxx",
+                CLOUDFLARE_SECRETKEY: "xxx",
+                MAILGUN_API_KEY:"xxxxx"
+            },
+        },
+    ],
+};
