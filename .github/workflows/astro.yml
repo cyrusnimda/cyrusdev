@@ -15,9 +15,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Use Node.js 20
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
         node-version: 20
         cache: 'npm'
@@ -39,5 +39,5 @@ jobs:
         EXCLUDE: "/node_modules/"
         SCRIPT_AFTER: |
           cd /var/www/html/cyrusdev.co.uk
-          pnpm ci --production
-          pm2 restart ecosystem.config.cjs
+          npm ci --production
+          pm2 reload cyrusdev || pm2 start ecosystem.config.cjs
