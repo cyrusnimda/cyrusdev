@@ -1,16 +1,16 @@
 ---
 
 import Layout from '../layouts/Layout.astro';
-import under from '../assets/under.webp';
 ---
 
 
 <Layout>
 	<section class="flex flex-col items-center justify-center gap-8 md:gap-12 min-h-[80vh] text-center overflow-hidden">
 		<div class="space-y-4 animate-fade-in-up">
-			<h1 class="text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-emerald-400 pb-2">
-				Cyrusdev
+			<h1 class="text-5xl md:text-7xl font-bold text-white font-display tracking-tight">
+				<span class="text-white">Cyrus</span><span class="title-dev">dev</span>
 			</h1>
+			<div class="h-px w-24 bg-gradient-to-r from-transparent via-blue-400/60 to-transparent mx-auto"></div>
 			<p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto px-4">
 				Expert backend solutions for scalable web applications.
 				<br/>
@@ -113,5 +113,66 @@ import under from '../assets/under.webp';
     @keyframes scroll {
         0% { transform: translateX(0); }
         100% { transform: translateX(-50%); }
+    }
+
+    .title-dev {
+        color: rgb(96, 165, 250);
+        display: inline-block;
+        animation: devPulse 2.4s ease-in-out infinite;
+        background: linear-gradient(135deg, rgba(96, 165, 250, 0.4), rgba(59, 130, 246, 0.2));
+        padding: 0 8px;
+        border-radius: 8px;
+        position: relative;
+    }
+
+    .title-dev::before {
+        content: '';
+        position: absolute;
+        inset: -4px;
+        border-radius: 8px;
+        background: radial-gradient(circle at 30% 30%, rgba(96, 165, 250, 0.3), transparent 70%);
+        animation: devGlow 2.4s ease-in-out infinite;
+        pointer-events: none;
+    }
+
+    .title-dev::after {
+        content: '';
+        position: absolute;
+        inset: -2px;
+        border-radius: 8px;
+        border: 1px solid rgba(96, 165, 250, 0.0);
+        animation: devBorder 2.4s ease-in-out infinite;
+        pointer-events: none;
+    }
+
+    @keyframes devPulse {
+        0%, 100% {
+            transform: scale(1);
+            text-shadow: 0 0 24px rgba(96, 165, 250, 0.35);
+        }
+        50% {
+            transform: scale(1.08);
+            text-shadow: 0 0 40px rgba(96, 165, 250, 0.6), 0 0 60px rgba(96, 165, 250, 0.3);
+        }
+    }
+
+    @keyframes devGlow {
+        0%, 100% {
+            opacity: 0.3;
+            box-shadow: 0 0 20px rgba(96, 165, 250, 0.2);
+        }
+        50% {
+            opacity: 0.6;
+            box-shadow: 0 0 40px rgba(96, 165, 250, 0.4), inset 0 0 30px rgba(96, 165, 250, 0.1);
+        }
+    }
+
+    @keyframes devBorder {
+        0%, 100% {
+            border-color: rgba(96, 165, 250, 0.1);
+        }
+        50% {
+            border-color: rgba(96, 165, 250, 0.3);
+        }
     }
 </style>
