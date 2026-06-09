@@ -17,9 +17,12 @@ importers:
       astro:
         specifier: 5.16.15
         version: 5.16.15(@types/node@22.13.10)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.56.0)(typescript@5.9.3)
+      canvas-confetti:
+        specifier: ^1.9.4
+        version: 1.9.4
       mailgun.js:
-        specifier: ^12.7.1
-        version: 12.9.0
+        specifier: 12.7.1
+        version: 12.7.1
       notyf:
         specifier: ^3.10.0
         version: 3.10.0
@@ -771,6 +774,9 @@ packages:
     resolution: {integrity: sha512-8WB3Jcas3swSvjIeA2yvCJ+Miyz5l1ZmB6HFb9R1317dt9LCQoswg/BGrmAmkWVEszSrrg4RwmO46qIm2OEnSA==}
     engines: {node: '>=16'}
 
+  canvas-confetti@1.9.4:
+    resolution: {integrity: sha512-yxQbJkAVrFXWNbTUjPqjF7G+g6pDotOUHGbkZq2NELZUMDpiJ85rIEazVb8GTaAptNW2miJAXbs1BtioA251Pw==}
+
   ccount@2.0.1:
     resolution: {integrity: sha512-eyrF0jiFpY+3drT6383f1qhkbGsLSifNAjA61IUjZjmLCWjItY6LB9ft9YhoDgwfmclB2zhu51Lc7+95b8NRAg==}
 
@@ -1254,8 +1260,8 @@ packages:
   magicast@0.5.1:
     resolution: {integrity: sha512-xrHS24IxaLrvuo613F719wvOIv9xPHFWQHuvGUBmPnCA/3MQxKI3b+r7n1jAoDHmsbC5bRhTZYR77invLAxVnw==}
 
-  mailgun.js@12.9.0:
-    resolution: {integrity: sha512-eUoZnMEfC3+lKmRt/h8CaxtIJSlm6QRSQM7FjQKSV4AqH4/9MmHL9o2IvtHVUj46KuJLn1iUqzjy48W/9iUEpw==}
+  mailgun.js@12.7.1:
+    resolution: {integrity: sha512-VG2zRx4hKVoLGdMDpF5Bt+lkhS6g+eWb547FR4/iozoGEszcT+uf8/0EsPBwnpfI2gYlui3aaPnQCzcFDYvGXQ==}
     engines: {node: '>=18.0.0'}
 
   markdown-table@3.0.4:
@@ -2572,6 +2578,8 @@ snapshots:
 
   camelcase@8.0.0: {}
 
+  canvas-confetti@1.9.4: {}
+
   ccount@2.0.1: {}
 
   chalk@5.6.2: {}
@@ -3053,7 +3061,7 @@ snapshots:
       '@babel/types': 7.28.6
       source-map-js: 1.2.1
 
-  mailgun.js@12.9.0:
+  mailgun.js@12.7.1:
     dependencies:
       axios: 1.17.0
       base-64: 1.0.0

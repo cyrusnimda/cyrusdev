@@ -99,6 +99,7 @@ import {CLOUDFLARE_APIKEY} from "astro:env/server";
 	<script>
 		import 'notyf/notyf.min.css';
 		import { Notyf } from 'notyf';
+		import confetti from 'canvas-confetti';
 
 		const notyf = new Notyf({ position: { x: 'right', y: 'bottom' }, duration: 4000 });
 
@@ -123,10 +124,16 @@ import {CLOUDFLARE_APIKEY} from "astro:env/server";
 				});
 
 				if (response.ok) {
+					confetti({
+						particleCount: 100,
+						spread: 70,
+						origin: { y: 0.6 }
+					});
 					notyf.success('Message sent successfully!');
 					contactForm.reset();
 				} else {
-					notyf.error('Error sending message. Please try again.');
+                    console.error('Error sending message:', response);
+					notyf.error('Error sending message: ' + response.statusText || 'Please try again later.');
 				}
 			});
 		}

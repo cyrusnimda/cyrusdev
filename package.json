@@ -12,6 +12,7 @@
     "@astrojs/node": "9.5.2",
     "@tailwindcss/vite": "4.1.18",
     "astro": "5.16.15",
+    "canvas-confetti": "1.9.4",
     "mailgun.js": "12.7.1",
     "notyf": "^3.10.0",
     "tailwindcss": "4.1.18"
