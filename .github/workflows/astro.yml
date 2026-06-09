@@ -44,11 +44,11 @@ jobs:
       with:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         ARGS: "-rlgoDzvc -i"
-        SOURCE: "dist/"
+        SOURCE: "./"
         REMOTE_HOST: "ssh.cyrusnimda.com"
         REMOTE_USER: "josu"
-        TARGET: "/var/www/html/cyrusdev.co.uk/dist/"
-        EXCLUDE: "/node_modules/"
+        TARGET: "/var/www/html/cyrusdev.co.uk/"
+        EXCLUDE: "/node_modules/,/.git/,/src/,/.github/,/.astro/,/.env*"
         SCRIPT_AFTER: |
           cd /var/www/html/cyrusdev.co.uk
           /home/josu/.nvm/versions/node/v20.12.1/bin/pnpm ci --production
