@@ -20,6 +20,9 @@ importers:
       canvas-confetti:
         specifier: 1.9.4
         version: 1.9.4
+      form-data:
+        specifier: ^4.0.5
+        version: 4.0.5
       mailgun.js:
         specifier: 12.7.1
         version: 12.7.1
