@@ -18,7 +18,7 @@ importers:
         specifier: 5.16.15
         version: 5.16.15(@types/node@22.13.10)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.56.0)(typescript@5.9.3)
       canvas-confetti:
-        specifier: ^1.9.4
+        specifier: 1.9.4
         version: 1.9.4
       mailgun.js:
         specifier: 12.7.1
